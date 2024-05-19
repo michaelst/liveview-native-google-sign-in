@@ -13,7 +13,7 @@ let package = Package(
             targets: ["LiveViewNativeGoogleSignIn"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/liveview-native/liveview-client-swiftui", from: "0.3.0-rc.1"),
+        .package(url: "https://github.com/liveview-native/liveview-client-swiftui", branch: "main"),
         .package(url: "https://github.com/google/GoogleSignIn-iOS", .upToNextMajor(from: "7.1.0")),
     ],
     targets: [
@@ -26,10 +26,8 @@ let package = Package(
                 .product(name: "LiveViewNativeStylesheet", package: "liveview-client-swiftui"),
                 .product(name: "GoogleSignIn", package: "GoogleSignIn-iOS"),
                 .product(name: "GoogleSignInSwift", package: "GoogleSignIn-iOS"),
-            ]
+            ],
+            path: "./swiftui"
         ),
-        .testTarget(
-            name: "LiveViewNativeGoogleSignInTests",
-            dependencies: ["LiveViewNativeGoogleSignIn"]),
     ]
 )

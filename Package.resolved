@@ -1,5 +1,5 @@
 {
-  "originHash" : "e139da3aade735408571d963c24abe3721e5974098677792ce6b2ccc90d24179",
+  "originHash" : "fc9596db3209128e6893d15cef719daa3538b109b68c573c980a51d4de411390",
   "pins" : [
     {
       "identity" : "appauth-ios",
@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/liveview-native/liveview-client-swiftui",
       "state" : {
-        "revision" : "8ff78369b6d2e7f83af97d208a577e6623f715b9",
-        "version" : "0.3.0-rc.1"
+        "branch" : "main",
+        "revision" : "c46a2cc3fc25b31af70932544677dd862c899a27"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/liveview-native/liveview-native-core-swift.git",
       "state" : {
-        "revision" : "b6a24652b35acd534fa437cb4cf4654fcb33828f",
-        "version" : "0.1.0-7500ce9"
+        "revision" : "339594b395938e38f1fb2216a31c8791030ec9ba",
+        "version" : "0.2.1"
       }
     },
     {

@@ -1,30 +1,30 @@
-# liveview-native-swiftui-google-sign-in
+# liveview-native-google-sign-in
 
 ## About
 
-`liveview-native-swiftui-google-sign-in` is an add-on library for [LiveView Native](https://github.com/liveview-native/live_view_native). It adds [Google Sign In](https://developers.google.com/identity/sign-in/ios/sign-in) support.
+`liveview-native-google-sign-in` is an add-on library for [LiveView Native](https://github.com/liveview-native/live_view_native). It adds [Google Sign In](https://developers.google.com/identity/sign-in/ios/sign-in) support.
 
 ## Installation
 
 1. Add this library as a package to your LiveView Native application's Xcode project
     * In Xcode, select *File* → *Add Packages...*
-    * Enter the package URL `https://github.com/michaelst/liveview-native-swiftui-google-sign-in`
+    * Enter the package URL `https://github.com/michaelst/liveview-native-google-sign-in`
     * Select *Add Package*
 
 ## Usage
 
-When using Swift 5.9+, add the `GoogleSignInRegistry` to the `addons` list of your `#LiveView`.
+Import `GoogleSignInRegistry` and add `.googleSignIn` to the list of addons on your `LiveView`:
 
 ```swift
 import SwiftUI
 import LiveViewNative
-import LiveViewNativeGoogleSignIn // 1. Import the add-on library.
+import LiveViewNativeGoogleSignIn
 
 struct ContentView: View {
     var body: some View {
         #LiveView(
           .localhost,
-          addons: [GoogleSignInRegistry<_>.self] // 2. Include the `GoogleSignInRegistry`.
+          addons: [.googleSignIn]
         )
     }
 }

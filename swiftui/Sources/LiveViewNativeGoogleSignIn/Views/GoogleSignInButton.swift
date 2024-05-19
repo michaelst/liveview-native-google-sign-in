@@ -12,11 +12,11 @@ import GoogleSignIn
 
 @_documentation(visibility: public)
 @LiveElement
-struct SignInButton<Root: RootRegistry>: View {
+struct GoogleSignInButton<Root: RootRegistry>: View {
     @Event("onSignIn", type: "click") private var onSignIn
     
     var body: some View {
-        GoogleSignInButton(action: handleSignInButton)
+        GoogleSignInSwift.GoogleSignInButton(action: handleSignInButton)
     }
     
     func handleSignInButton() {
