@@ -13,17 +13,20 @@ import GoogleSignIn
 @_documentation(visibility: public)
 @LiveElement
 struct GoogleSignInButton<Root: RootRegistry>: View {
-    private var user_state = ""
     @Event("onSignIn", type: "click") private var onSignIn
     
-    @ViewBuilder
     var body: some View {
-        if user_state == "not_logged_in" {
-            GoogleSignInSwift.GoogleSignInButton(action: handleSignInButton)
-        } else {
-            ProgressView()
-        }
-        
+        GoogleSignInSwift.GoogleSignInButton(action: handleSignInButton)
+            .onAppear {
+                GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+                    guard error == nil else { return }
+                    
+                    guard let user = user else { return }
+                    guard let idToken = user.idToken else { return }
+                    
+                    onSignIn(value: ["id_token": idToken.tokenString])
+                }
+            }
     }
     
     func handleSignInButton() {
